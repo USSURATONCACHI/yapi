@@ -20,14 +20,6 @@ body {
     height: 100vh;
 }
 
-.panel {
-    display: inline-block;
-    padding: 1rem;
-    background-color: #ffbb22;
-    border-radius: 0.5rem;
-}
-
-
 .vertical-container {
     display: flex;
     flex-direction: column;
@@ -41,6 +33,58 @@ body {
 
 .w100p {
     width: 100%;
+}
+
+/* panel for link input */
+.panel {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-top: .1rem solid #ffbb22;
+}
+
+.link-input-text {
+}
+
+
+.link-input-wrap {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.link-input {
+    width: 100%;
+    padding: 0.8rem;
+
+    border: .15rem solid #ffbb22;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+.link-input-btn {
+    background-color: #ffbb22;
+    border: none;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
+    cursor:pointer;
+
+    padding: 0;
+    width: 3rem;
+    font-size: 1.5rem;
+    vertical-align: center;
+
+    background-color: #ffbb22;
+    box-shadow: inset 0 0 0 0px #ff8800;
+    
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.link-input-btn::after {
+    content: "🢂";
+    display: inline-block;
+    transform: translateY(8%);
+}
+
+.link-input-btn:hover {
+    background-color: #ffcc44;
 }
 
 /* panel-button for yandex auth */
