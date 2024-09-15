@@ -1,7 +1,7 @@
 import sys
 import json
 
-from globals import app, db, config
+from globals import app, db, config, setConfig
 import models
 import api_endpoints
 import static_pages
@@ -10,7 +10,7 @@ def load_config(file_path):
     global config
     try:
         with open(file_path, 'r') as f:
-            config = json.load(f)
+            setConfig(json.load(f))
     except Exception as e:
         print(f"Error loading config: {e}")
         sys.exit(1)

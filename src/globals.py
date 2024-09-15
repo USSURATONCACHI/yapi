@@ -7,3 +7,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///default.db'
 db = SQLAlchemy(app)
 
 config = {}
+
+def setConfig(newConfig):
+    config = newConfig
