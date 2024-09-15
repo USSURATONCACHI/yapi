@@ -22,13 +22,18 @@ def load_config(file_path):
 def get_yandex_login_url():
     if 'oauth_client_id_yandex' not in config:
         return jsonify({'error': 'OAuth client ID not configured'}), 500
-    yandex_oauth_url = f"https://oauth.yandex.com/authorize?client_id={config['oauth_client_id_yandex']}"
+    yandex_oauth_url = f"https://oauth.yandex.com/authorize?response_type=token&client_id={config['oauth_client_id_yandex']}"
     return jsonify({'url': yandex_oauth_url})
 
 
 @app.route('/login/authorized')
 def login_authorized():
     return jsonify({'message': 'Login authorized'}), 200
+
+
+@app.route('/')
+def index():
+    return serve_static_file('index.html')
 
 
 @app.route('/<path:filename>')
@@ -39,6 +44,8 @@ def serve_static_file(filename):
         return send_from_directory(static_folder, filename)
     else:
         return send_from_directory(static_folder, '404.html'), 404
+        
+    # return serve_static_file('index.html')
 
 
 if __name__ == '__main__':
