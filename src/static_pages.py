@@ -3,6 +3,9 @@ from globals import app, db, config
 
 import os
 
+@app.route('/me')
+def me():
+    return serve_static_file('me.html')
 
 @app.route('/login/authorized')
 def login_authorized():

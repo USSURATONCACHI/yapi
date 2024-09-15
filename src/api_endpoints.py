@@ -11,6 +11,12 @@ def get_yandex_login_url():
 
 @app.route('/api/yandex_authorize', methods=['POST'])
 def yandex_authorize():
-    print(request.get_json())
+    data = request.get_json()
 
-    return jsonify({'msg': 'Hello, world!'})
+    print(data.get('access_token'))
+    print(data.get('expires_in'))
+
+    return jsonify({
+        'redirect_to': '/me',
+        'current_access_token': 'sigma-0001'
+    })
