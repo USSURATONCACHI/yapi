@@ -2,8 +2,13 @@ import os
 import sys
 import json
 from flask import Flask, jsonify, send_from_directory
+from flask_sqlalchemy import SQLAlchemy
+
+
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///default.db'
+db = SQLAlchemy(app)
 
 config = {}
 
