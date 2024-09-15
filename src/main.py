@@ -4,15 +4,8 @@ import json
 from flask import Flask, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
-
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///default.db'
-db = SQLAlchemy(app)
-
+from globals import app, db, config
 import models
-
-config = {}
-
 
 def load_config(file_path):
     global config
