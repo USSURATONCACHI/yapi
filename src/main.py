@@ -5,10 +5,11 @@ from flask import Flask, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
 
-
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///default.db'
 db = SQLAlchemy(app)
+
+import models
 
 config = {}
 
@@ -50,15 +51,19 @@ def serve_static_file(filename):
     else:
         return send_from_directory(static_folder, '404.html'), 404
         
-    # return serve_static_file('index.html')
-
-
-if __name__ == '__main__':
+def main():
     if len(sys.argv) < 2:
         print("Usage: python app.py <config.json>")
         sys.exit(1)
     
     load_config(sys.argv[1])
 
+    with app.app_context():
+        db.create_all()
+
     port = config.get('port', 5000)
     app.run(host='0.0.0.0', port=port)
+
+
+if __name__ == '__main__':
+    main()
