@@ -1,7 +1,7 @@
 import sys
 import json
 
-from globals import app, db, config, setConfig
+import globals
 import models
 import api_endpoints
 import static_pages
@@ -10,7 +10,7 @@ def load_config(file_path):
     global config
     try:
         with open(file_path, 'r') as f:
-            setConfig(json.load(f))
+            globals.config = json.load(f)
     except Exception as e:
         print(f"Error loading config: {e}")
         sys.exit(1)
@@ -22,11 +22,11 @@ def main():
     
     load_config(sys.argv[1])
 
-    with app.app_context():
-        db.create_all()
+    with globals.app.app_context():
+        globals.db.create_all()
 
-    port = config.get('port', 5000)
-    app.run(host='0.0.0.0', port=port)
+    port = globals.config.get('port', 5000)
+    globals.app.run(host='0.0.0.0', port=port)
 
 
 if __name__ == '__main__':
