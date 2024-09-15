@@ -5,15 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAPI</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/bootstrap/bootstrap-grid.css">
+    <link rel="stylesheet" href="css/inria-sans.css">
+
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-4 offset-4">
-                <h1>Hello, world!</h1>
+<body class="inria-sans-regular">
+    <div class="centered-container size-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 offset-4">
+                    
+                    <div class="vertical-container spacing2 inria-sans-regular">
+                        <button class="panel-button w100p">
+                            <span class="inria-sans-regular">
+                                Войти через
+                            </span>
+                            <img src="/images/yandex.svg" alt="Yandex">
+                        </button>
+
+                        <p>или</p>
+                        <div class="panel w100p">
+                            <h1>Ввести публичную ссылку</h1>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>

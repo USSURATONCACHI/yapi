@@ -1,0 +1,78 @@
+body {
+    font-family: "Inria Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-page {
+    width: 100vw;
+    height: 100vh;
+}
+
+.panel {
+    display: inline-block;
+    padding: 1rem;
+    background-color: #ffbb22;
+    border-radius: 0.5rem;
+}
+
+
+.vertical-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.spacing2 {
+    gap: 2rem;
+}
+
+.w100p {
+    width: 100%;
+}
+
+/* panel-button for yandex auth */
+.panel-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    padding: 1rem;
+    border: none;
+
+    
+    border-radius: 0.5rem;
+    
+    font-size: 1rem;
+    vertical-align: center;
+    
+    cursor: pointer;
+
+    background-color: #ffbb22;
+    box-shadow: inset 0 0 0 0px #ff8800;
+    
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+
+.panel-button:hover {
+    background-color: #ffcc44;
+    box-shadow: inset 0 0 0 0.3rem #ff8800;
+}
+
+.panel-button img {
+    height: 1lh;
+}
