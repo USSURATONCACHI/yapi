@@ -1,7 +1,8 @@
 import os
 import sys
 import json
-from flask import Flask, jsonify, send_from_directory
+
+from flask import Flask, request, jsonify, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
 from globals import app, db, config
@@ -17,6 +18,7 @@ def load_config(file_path):
         sys.exit(1)
 
 
+# API endpoints
 @app.route('/api/get_yandex_login_url')
 def get_yandex_login_url():
     if 'oauth_client_id_yandex' not in config:
@@ -24,10 +26,17 @@ def get_yandex_login_url():
     yandex_oauth_url = f"https://oauth.yandex.com/authorize?response_type=token&client_id={config['oauth_client_id_yandex']}"
     return jsonify({'url': yandex_oauth_url})
 
+@app.route('/api/yandex_authorize', methods=['POST'])
+def yandex_authorize():
+    print(request.get_json())
 
+    return jsonify({'msg': 'Hello, world!'})
+
+
+# Static pages
 @app.route('/login/authorized')
 def login_authorized():
-    return jsonify({'message': 'Login authorized'}), 200
+    return serve_static_file('authorized.html')
 
 
 @app.route('/')
