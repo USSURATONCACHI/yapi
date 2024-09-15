@@ -7,6 +7,10 @@ import os
 def me():
     return serve_static_file('me.html')
 
+@app.route('/unauthorized')
+def unauthorized():
+    return serve_static_file('unauthorized.html')
+
 @app.route('/login/authorized')
 def login_authorized():
     return serve_static_file('authorized.html')

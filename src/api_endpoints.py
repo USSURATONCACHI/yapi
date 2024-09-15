@@ -37,6 +37,8 @@ def am_i_logged_in():
 
     if token:
         print(token)
-        return jsonify({"message": "Yes"}), 200
 
-    return jsonify({"message": "No"}), 401
+    if token == 'skibidi-sigma':
+        return jsonify({"message": "Yes"}), 200
+    else:
+        return jsonify({"message": "No"}), 401

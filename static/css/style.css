@@ -120,3 +120,43 @@ body {
 .panel-button img {
     height: 1lh;
 }
+
+
+/* button-secondary */
+.button-secondary {
+    text-decoration: none;
+    color: #222222;
+    font-weight: bold;
+    padding: 1rem;
+    border: none;
+
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    vertical-align: center;
+
+    background-color: #ffbb22;
+    box-shadow: inset 0 0 0 0px #ff8800;
+    
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+.button-secondary:hover {
+    background-color: #ffcc44;
+    box-shadow: inset 0 0 0 0.3rem #ff8800;
+}
+
+
+
+.panelfdfdfd-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+
+    
+    
+    
+    cursor: pointer;
+
+}
+
